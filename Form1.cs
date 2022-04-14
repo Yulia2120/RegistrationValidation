@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegistrationValidation.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace RegistrationValidation
         public FormBegin()
         {
             InitializeComponent();
+            usersLBindingSource.DataSource = GetUsersClassData.GetUsersL();
         }
     }
 }

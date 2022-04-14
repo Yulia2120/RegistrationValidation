@@ -28,29 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.labUsername = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labEmail = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.labPassword = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.butSignUp = new System.Windows.Forms.Button();
             this.butForgot = new System.Windows.Forms.Button();
-            this.labInEmail = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.labInPassword = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.butSignUp = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.labPassword = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.labEmail = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labUsername = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.butSignIn = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.labInPassword = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.labInEmail = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.usersLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersLBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel
@@ -66,6 +77,7 @@
             // 
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Controls.Add(this.tabPage3);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tabControl.Location = new System.Drawing.Point(0, 42);
@@ -95,6 +107,104 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Sign up";
             // 
+            // butForgot
+            // 
+            this.butForgot.BackColor = System.Drawing.Color.White;
+            this.butForgot.FlatAppearance.BorderSize = 0;
+            this.butForgot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butForgot.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.butForgot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(136)))), ((int)(((byte)(86)))));
+            this.butForgot.Location = new System.Drawing.Point(195, 258);
+            this.butForgot.Name = "butForgot";
+            this.butForgot.Size = new System.Drawing.Size(198, 31);
+            this.butForgot.TabIndex = 8;
+            this.butForgot.Text = "Forgot password? ";
+            this.butForgot.UseVisualStyleBackColor = false;
+            // 
+            // butSignUp
+            // 
+            this.butSignUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(136)))), ((int)(((byte)(86)))));
+            this.butSignUp.FlatAppearance.BorderSize = 0;
+            this.butSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.butSignUp.ForeColor = System.Drawing.Color.White;
+            this.butSignUp.Location = new System.Drawing.Point(57, 308);
+            this.butSignUp.Name = "butSignUp";
+            this.butSignUp.Size = new System.Drawing.Size(336, 38);
+            this.butSignUp.TabIndex = 7;
+            this.butSignUp.Text = "Sign up";
+            this.butSignUp.UseVisualStyleBackColor = false;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.checkBox1.Location = new System.Drawing.Point(57, 264);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(119, 21);
+            this.checkBox1.TabIndex = 6;
+            this.checkBox1.Text = "Remember me";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // labPassword
+            // 
+            this.labPassword.AutoSize = true;
+            this.labPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labPassword.ForeColor = System.Drawing.Color.DimGray;
+            this.labPassword.Location = new System.Drawing.Point(57, 185);
+            this.labPassword.Name = "labPassword";
+            this.labPassword.Size = new System.Drawing.Size(75, 18);
+            this.labPassword.TabIndex = 5;
+            this.labPassword.Text = "Password";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox3.Location = new System.Drawing.Point(57, 208);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
+            this.textBox3.Size = new System.Drawing.Size(336, 26);
+            this.textBox3.TabIndex = 4;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox2.Location = new System.Drawing.Point(54, 133);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(336, 26);
+            this.textBox2.TabIndex = 3;
+            // 
+            // labEmail
+            // 
+            this.labEmail.AutoSize = true;
+            this.labEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labEmail.ForeColor = System.Drawing.Color.DimGray;
+            this.labEmail.Location = new System.Drawing.Point(53, 109);
+            this.labEmail.Name = "labEmail";
+            this.labEmail.Size = new System.Drawing.Size(45, 18);
+            this.labEmail.TabIndex = 2;
+            this.labEmail.Text = "Email";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(54, 58);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(336, 26);
+            this.textBox1.TabIndex = 1;
+            // 
+            // labUsername
+            // 
+            this.labUsername.AutoSize = true;
+            this.labUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labUsername.ForeColor = System.Drawing.Color.DimGray;
+            this.labUsername.Location = new System.Drawing.Point(53, 33);
+            this.labUsername.Name = "labUsername";
+            this.labUsername.Size = new System.Drawing.Size(77, 18);
+            this.labUsername.TabIndex = 0;
+            this.labUsername.Text = "Username";
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -112,143 +222,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Sign in";
             // 
-            // labUsername
-            // 
-            this.labUsername.AutoSize = true;
-            this.labUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labUsername.ForeColor = System.Drawing.Color.DimGray;
-            this.labUsername.Location = new System.Drawing.Point(53, 33);
-            this.labUsername.Name = "labUsername";
-            this.labUsername.Size = new System.Drawing.Size(77, 18);
-            this.labUsername.TabIndex = 0;
-            this.labUsername.Text = "Username";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(54, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(336, 26);
-            this.textBox1.TabIndex = 1;
-            // 
-            // labEmail
-            // 
-            this.labEmail.AutoSize = true;
-            this.labEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labEmail.ForeColor = System.Drawing.Color.DimGray;
-            this.labEmail.Location = new System.Drawing.Point(53, 109);
-            this.labEmail.Name = "labEmail";
-            this.labEmail.Size = new System.Drawing.Size(45, 18);
-            this.labEmail.TabIndex = 2;
-            this.labEmail.Text = "Email";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(54, 133);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(336, 26);
-            this.textBox2.TabIndex = 3;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(57, 208);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(336, 26);
-            this.textBox3.TabIndex = 4;
-            // 
-            // labPassword
-            // 
-            this.labPassword.AutoSize = true;
-            this.labPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.labPassword.Location = new System.Drawing.Point(57, 185);
-            this.labPassword.Name = "labPassword";
-            this.labPassword.Size = new System.Drawing.Size(75, 18);
-            this.labPassword.TabIndex = 5;
-            this.labPassword.Text = "Password";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.checkBox1.Location = new System.Drawing.Point(57, 264);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(119, 21);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "Remember me";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // butSignUp
-            // 
-            this.butSignUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(136)))), ((int)(((byte)(86)))));
-            this.butSignUp.FlatAppearance.BorderSize = 0;
-            this.butSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butSignUp.ForeColor = System.Drawing.Color.White;
-            this.butSignUp.Location = new System.Drawing.Point(57, 308);
-            this.butSignUp.Name = "butSignUp";
-            this.butSignUp.Size = new System.Drawing.Size(336, 38);
-            this.butSignUp.TabIndex = 7;
-            this.butSignUp.Text = "Sign up";
-            this.butSignUp.UseVisualStyleBackColor = false;
-            // 
-            // butForgot
-            // 
-            this.butForgot.BackColor = System.Drawing.Color.White;
-            this.butForgot.FlatAppearance.BorderSize = 0;
-            this.butForgot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butForgot.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.butForgot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(136)))), ((int)(((byte)(86)))));
-            this.butForgot.Location = new System.Drawing.Point(195, 258);
-            this.butForgot.Name = "butForgot";
-            this.butForgot.Size = new System.Drawing.Size(198, 31);
-            this.butForgot.TabIndex = 8;
-            this.butForgot.Text = "Forgot password? ";
-            this.butForgot.UseVisualStyleBackColor = false;
-            // 
-            // labInEmail
-            // 
-            this.labInEmail.AutoSize = true;
-            this.labInEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labInEmail.ForeColor = System.Drawing.Color.DimGray;
-            this.labInEmail.Location = new System.Drawing.Point(56, 170);
-            this.labInEmail.Name = "labInEmail";
-            this.labInEmail.Size = new System.Drawing.Size(45, 18);
-            this.labInEmail.TabIndex = 1;
-            this.labInEmail.Text = "Email";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(56, 194);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(336, 26);
-            this.textBox4.TabIndex = 2;
-            // 
-            // labInPassword
-            // 
-            this.labInPassword.AutoSize = true;
-            this.labInPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labInPassword.ForeColor = System.Drawing.Color.DimGray;
-            this.labInPassword.Location = new System.Drawing.Point(56, 243);
-            this.labInPassword.Name = "labInPassword";
-            this.labInPassword.Size = new System.Drawing.Size(75, 18);
-            this.labInPassword.TabIndex = 3;
-            this.labInPassword.Text = "Password";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox5.Location = new System.Drawing.Point(56, 267);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.PasswordChar = '*';
-            this.textBox5.Size = new System.Drawing.Size(336, 26);
-            this.textBox5.TabIndex = 4;
-            // 
             // butSignIn
             // 
             this.butSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(136)))), ((int)(((byte)(86)))));
@@ -263,6 +236,45 @@
             this.butSignIn.Text = "Sign In";
             this.butSignIn.UseVisualStyleBackColor = false;
             // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox5.Location = new System.Drawing.Point(56, 267);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.PasswordChar = '*';
+            this.textBox5.Size = new System.Drawing.Size(336, 26);
+            this.textBox5.TabIndex = 4;
+            // 
+            // labInPassword
+            // 
+            this.labInPassword.AutoSize = true;
+            this.labInPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labInPassword.ForeColor = System.Drawing.Color.DimGray;
+            this.labInPassword.Location = new System.Drawing.Point(56, 243);
+            this.labInPassword.Name = "labInPassword";
+            this.labInPassword.Size = new System.Drawing.Size(75, 18);
+            this.labInPassword.TabIndex = 3;
+            this.labInPassword.Text = "Password";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox4.Location = new System.Drawing.Point(56, 194);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(336, 26);
+            this.textBox4.TabIndex = 2;
+            // 
+            // labInEmail
+            // 
+            this.labInEmail.AutoSize = true;
+            this.labInEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labInEmail.ForeColor = System.Drawing.Color.DimGray;
+            this.labInEmail.Location = new System.Drawing.Point(56, 170);
+            this.labInEmail.Name = "labInEmail";
+            this.labInEmail.Size = new System.Drawing.Size(45, 18);
+            this.labInEmail.TabIndex = 1;
+            this.labInEmail.Text = "Email";
+            // 
             // pictureBox
             // 
             this.pictureBox.BackColor = System.Drawing.Color.Transparent;
@@ -273,6 +285,68 @@
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.dataGridView);
+            this.tabPage3.Location = new System.Drawing.Point(4, 27);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(447, 399);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Table";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AutoGenerateColumns = false;
+            this.dataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.passwordDataGridViewTextBoxColumn});
+            this.dataGridView.DataSource = this.usersLBindingSource;
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridView.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.Size = new System.Drawing.Size(447, 264);
+            this.dataGridView.TabIndex = 0;
+            // 
+            // usersLBindingSource
+            // 
+            this.usersLBindingSource.DataSource = typeof(RegistrationValidation.Model.UsersL);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FormBegin
             // 
@@ -291,6 +365,9 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersLBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -316,6 +393,13 @@
         private System.Windows.Forms.Label labInPassword;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label labInEmail;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource usersLBindingSource;
     }
 }
 
