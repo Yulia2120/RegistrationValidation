@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace RegistrationValidation.Controller
 {
     public class TextCrypt
     {
+         public string Generate(string pass)
+        {
+           return BCrypt.Net.BCrypt.HashPassword(pass);
+        }
     }
 }
