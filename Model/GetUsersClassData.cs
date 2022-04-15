@@ -18,5 +18,6 @@ namespace RegistrationValidation.Model
                 return db.Query<UsersL>("sp_UsersL", commandType: CommandType.StoredProcedure).ToList();
             }
         }
+      
     }
 }

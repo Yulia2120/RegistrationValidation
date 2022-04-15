@@ -36,31 +36,32 @@
             this.butSignUp = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.labPassword = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtBoxPass = new System.Windows.Forms.TextBox();
+            this.txtBoxEmail = new System.Windows.Forms.TextBox();
             this.labEmail = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBoxName = new System.Windows.Forms.TextBox();
             this.labUsername = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.butSignIn = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtBoxInPass = new System.Windows.Forms.TextBox();
             this.labInPassword = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtBoxInEmail = new System.Windows.Forms.TextBox();
             this.labInEmail = new System.Windows.Forms.Label();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.usersLBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersLBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersLBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,10 +94,10 @@
             this.tabPage1.Controls.Add(this.butSignUp);
             this.tabPage1.Controls.Add(this.checkBox1);
             this.tabPage1.Controls.Add(this.labPassword);
-            this.tabPage1.Controls.Add(this.textBox3);
-            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.txtBoxPass);
+            this.tabPage1.Controls.Add(this.txtBoxEmail);
             this.tabPage1.Controls.Add(this.labEmail);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.txtBoxName);
             this.tabPage1.Controls.Add(this.labUsername);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tabPage1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(136)))), ((int)(((byte)(86)))));
@@ -134,6 +135,7 @@
             this.butSignUp.TabIndex = 7;
             this.butSignUp.Text = "Sign up";
             this.butSignUp.UseVisualStyleBackColor = false;
+            this.butSignUp.Click += new System.EventHandler(this.butSignUp_Click);
             // 
             // checkBox1
             // 
@@ -146,6 +148,7 @@
             this.checkBox1.TabIndex = 6;
             this.checkBox1.Text = "Remember me";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // labPassword
             // 
@@ -158,22 +161,22 @@
             this.labPassword.TabIndex = 5;
             this.labPassword.Text = "Password";
             // 
-            // textBox3
+            // txtBoxPass
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(57, 208);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(336, 26);
-            this.textBox3.TabIndex = 4;
+            this.txtBoxPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtBoxPass.Location = new System.Drawing.Point(57, 208);
+            this.txtBoxPass.Name = "txtBoxPass";
+            this.txtBoxPass.PasswordChar = '*';
+            this.txtBoxPass.Size = new System.Drawing.Size(336, 23);
+            this.txtBoxPass.TabIndex = 4;
             // 
-            // textBox2
+            // txtBoxEmail
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(54, 133);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(336, 26);
-            this.textBox2.TabIndex = 3;
+            this.txtBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtBoxEmail.Location = new System.Drawing.Point(54, 133);
+            this.txtBoxEmail.Name = "txtBoxEmail";
+            this.txtBoxEmail.Size = new System.Drawing.Size(336, 23);
+            this.txtBoxEmail.TabIndex = 3;
             // 
             // labEmail
             // 
@@ -186,13 +189,13 @@
             this.labEmail.TabIndex = 2;
             this.labEmail.Text = "Email";
             // 
-            // textBox1
+            // txtBoxName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(54, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(336, 26);
-            this.textBox1.TabIndex = 1;
+            this.txtBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtBoxName.Location = new System.Drawing.Point(54, 58);
+            this.txtBoxName.Name = "txtBoxName";
+            this.txtBoxName.Size = new System.Drawing.Size(336, 23);
+            this.txtBoxName.TabIndex = 1;
             // 
             // labUsername
             // 
@@ -209,9 +212,9 @@
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tabPage2.Controls.Add(this.butSignIn);
-            this.tabPage2.Controls.Add(this.textBox5);
+            this.tabPage2.Controls.Add(this.txtBoxInPass);
             this.tabPage2.Controls.Add(this.labInPassword);
-            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.txtBoxInEmail);
             this.tabPage2.Controls.Add(this.labInEmail);
             this.tabPage2.Controls.Add(this.pictureBox);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -235,15 +238,16 @@
             this.butSignIn.TabIndex = 5;
             this.butSignIn.Text = "Sign In";
             this.butSignIn.UseVisualStyleBackColor = false;
+            this.butSignIn.Click += new System.EventHandler(this.butSignIn_Click);
             // 
-            // textBox5
+            // txtBoxInPass
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox5.Location = new System.Drawing.Point(56, 267);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.PasswordChar = '*';
-            this.textBox5.Size = new System.Drawing.Size(336, 26);
-            this.textBox5.TabIndex = 4;
+            this.txtBoxInPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtBoxInPass.Location = new System.Drawing.Point(56, 267);
+            this.txtBoxInPass.Name = "txtBoxInPass";
+            this.txtBoxInPass.PasswordChar = '*';
+            this.txtBoxInPass.Size = new System.Drawing.Size(336, 23);
+            this.txtBoxInPass.TabIndex = 4;
             // 
             // labInPassword
             // 
@@ -256,13 +260,13 @@
             this.labInPassword.TabIndex = 3;
             this.labInPassword.Text = "Password";
             // 
-            // textBox4
+            // txtBoxInEmail
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(56, 194);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(336, 26);
-            this.textBox4.TabIndex = 2;
+            this.txtBoxInEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtBoxInEmail.Location = new System.Drawing.Point(56, 194);
+            this.txtBoxInEmail.Name = "txtBoxInEmail";
+            this.txtBoxInEmail.Size = new System.Drawing.Size(336, 23);
+            this.txtBoxInEmail.TabIndex = 2;
             // 
             // labInEmail
             // 
@@ -274,17 +278,6 @@
             this.labInEmail.Size = new System.Drawing.Size(45, 18);
             this.labInEmail.TabIndex = 1;
             this.labInEmail.Text = "Email";
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox.Image = global::RegistrationValidation.Properties.Resources.user__1_;
-            this.pictureBox.Location = new System.Drawing.Point(153, 29);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(121, 112);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox.TabIndex = 0;
-            this.pictureBox.TabStop = false;
             // 
             // tabPage3
             // 
@@ -304,7 +297,6 @@
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn});
@@ -316,16 +308,21 @@
             this.dataGridView.Size = new System.Drawing.Size(447, 264);
             this.dataGridView.TabIndex = 0;
             // 
-            // usersLBindingSource
+            // errorProvider
             // 
-            this.usersLBindingSource.DataSource = typeof(RegistrationValidation.Model.UsersL);
+            this.errorProvider.ContainerControl = this;
+            this.errorProvider.DataSource = this.usersLBindingSource;
             // 
-            // idDataGridViewTextBoxColumn
+            // pictureBox
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox.Image = global::RegistrationValidation.Properties.Resources.user__1_;
+            this.pictureBox.Location = new System.Drawing.Point(153, 29);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(121, 112);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -348,6 +345,10 @@
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
             this.passwordDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // usersLBindingSource
+            // 
+            this.usersLBindingSource.DataSource = typeof(RegistrationValidation.Model.UsersL);
+            // 
             // FormBegin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,9 +365,10 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersLBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -381,17 +383,17 @@
         private System.Windows.Forms.Button butSignUp;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label labPassword;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtBoxPass;
+        private System.Windows.Forms.TextBox txtBoxEmail;
         private System.Windows.Forms.Label labEmail;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBoxName;
         private System.Windows.Forms.Label labUsername;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button butSignIn;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtBoxInPass;
         private System.Windows.Forms.Label labInPassword;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtBoxInEmail;
         private System.Windows.Forms.Label labInEmail;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataGridView dataGridView;
@@ -400,6 +402,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource usersLBindingSource;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
 
