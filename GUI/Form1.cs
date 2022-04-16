@@ -2,12 +2,9 @@
 using RegistrationValidation.Controller;
 using RegistrationValidation.Model;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
 
 using System.Windows.Forms;
@@ -67,12 +64,7 @@ namespace RegistrationValidation
                     UsersL obj = db.Query<UsersL>($"Select * from UsersL where Email = '{txtBoxInEmail.Text}'", commandType: CommandType.Text).SingleOrDefault();
                     if (obj != null)
                     {
-                        if (obj.Password == txtBoxInPass.Text)
-                        {
                             MessageBox.Show("Login successfully!");
-
-                        }
-
                     }
                 }
             }
