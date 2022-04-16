@@ -22,41 +22,43 @@ namespace RegistrationValidation
             usersLBindingSource.DataSource = GetUsersClassData.GetUsersL();
          
         }
-     
-   
+
+
         private void butSignUp_Click(object sender, EventArgs e)
         {
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                MessageBox.Show(txtBoxName.Text, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                MessageBox.Show(txtBoxEmail.Text, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                MessageBox.Show(txtBoxPass.Text, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
             RegistrationController new_user = new RegistrationController();
             new_user.Registration(txtBoxName.Text, txtBoxEmail.Text, txtBoxPass.Text);
+         
             usersLBindingSource.ResetBindings(false);
             usersLBindingSource.DataSource = GetUsersClassData.GetUsersL();
 
-            //usersLBindingSource.EndEdit();
-            //if (new_user != null)
-            //{
-            //    ValidationContext context = new ValidationContext(new_user, null, null);
-            //    IList<ValidationResult> errors = new List<ValidationResult>();
-            //    if (!Validator.TryValidateObject(new_user, context, errors, true))
-            //    {
-            //        foreach (ValidationResult result in errors)
-            //        {
-            //            MessageBox.Show(result.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //            return;
-            //        }
-            //    }
-
-            }   
-
+            
+        }
         private void butSignIn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtBoxInEmail.Text))
+            if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                MessageBox.Show(this, "Pleas enter your email!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtBoxInEmail.Focus();
-                return;
+                MessageBox.Show(txtBoxInEmail.Text, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
             }
-            try
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                MessageBox.Show(txtBoxInPass.Text, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+                try
             {
                 using (IDbConnection db = new SqlConnection(SqlConnectionClass.ConnectionString))
                 {
@@ -68,16 +70,9 @@ namespace RegistrationValidation
                         if (obj.Password == txtBoxInPass.Text)
                         {
                             MessageBox.Show("Login successfully!");
-                          
+
                         }
-                        else
-                        {
-                            MessageBox.Show(this, "Your username and password don't match!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show(this, "Your username and password don't match!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     }
                 }
             }
@@ -104,6 +99,81 @@ namespace RegistrationValidation
             }
             Properties.Settings.Default.Remembe = checkBox1.Checked;
             Properties.Settings.Default.Save();
+        }
+
+        private void txtBoxInEmail_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBoxInEmail.Text))
+            {
+                e.Cancel = true;
+                txtBoxInEmail.Focus();
+                errorProvider.SetError(txtBoxInEmail, "Pleas enter your email!");
+            }
+            else
+            {
+                e.Cancel= false;
+                errorProvider.SetError(txtBoxInEmail, null);
+            }
+        }
+
+        private void txtBoxInPass_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBoxInPass.Text))
+            {
+                e.Cancel = true;
+                txtBoxInPass.Focus();
+                errorProvider.SetError(txtBoxInPass, "Pleas enter your password!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider.SetError(txtBoxInPass, null);
+            }
+        }
+
+        private void txtBoxName_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBoxName.Text))
+            {
+                e.Cancel = true;
+                txtBoxName.Focus();
+                errorProvider.SetError(txtBoxName, "Pleas enter your name!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider.SetError(txtBoxName, null);
+            }
+        }
+
+        private void txtBoxEmail_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBoxEmail.Text))
+            {
+                e.Cancel = true;
+                txtBoxEmail.Focus();
+                errorProvider.SetError(txtBoxEmail, "Pleas enter your email!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider.SetError(txtBoxEmail, null);
+            }
+        }
+
+        private void txtBoxPass_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBoxPass.Text))
+            {
+                e.Cancel = true;
+                txtBoxPass.Focus();
+                errorProvider.SetError(txtBoxPass, "Pleas enter your password!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider.SetError(txtBoxPass, null);
+            }
         }
     }
 }

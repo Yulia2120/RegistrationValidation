@@ -47,10 +47,10 @@
             this.labInPassword = new System.Windows.Forms.Label();
             this.txtBoxInEmail = new System.Windows.Forms.TextBox();
             this.labInEmail = new System.Windows.Forms.Label();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,10 +58,10 @@
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersLBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,6 +169,7 @@
             this.txtBoxPass.PasswordChar = '*';
             this.txtBoxPass.Size = new System.Drawing.Size(336, 23);
             this.txtBoxPass.TabIndex = 4;
+            this.txtBoxPass.Validating += new System.ComponentModel.CancelEventHandler(this.txtBoxPass_Validating);
             // 
             // txtBoxEmail
             // 
@@ -177,6 +178,7 @@
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(336, 23);
             this.txtBoxEmail.TabIndex = 3;
+            this.txtBoxEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtBoxEmail_Validating);
             // 
             // labEmail
             // 
@@ -196,6 +198,7 @@
             this.txtBoxName.Name = "txtBoxName";
             this.txtBoxName.Size = new System.Drawing.Size(336, 23);
             this.txtBoxName.TabIndex = 1;
+            this.txtBoxName.Validating += new System.ComponentModel.CancelEventHandler(this.txtBoxName_Validating);
             // 
             // labUsername
             // 
@@ -248,6 +251,7 @@
             this.txtBoxInPass.PasswordChar = '*';
             this.txtBoxInPass.Size = new System.Drawing.Size(336, 23);
             this.txtBoxInPass.TabIndex = 4;
+            this.txtBoxInPass.Validating += new System.ComponentModel.CancelEventHandler(this.txtBoxInPass_Validating);
             // 
             // labInPassword
             // 
@@ -267,6 +271,7 @@
             this.txtBoxInEmail.Name = "txtBoxInEmail";
             this.txtBoxInEmail.Size = new System.Drawing.Size(336, 23);
             this.txtBoxInEmail.TabIndex = 2;
+            this.txtBoxInEmail.Validating += new System.ComponentModel.CancelEventHandler(this.txtBoxInEmail_Validating);
             // 
             // labInEmail
             // 
@@ -278,6 +283,17 @@
             this.labInEmail.Size = new System.Drawing.Size(45, 18);
             this.labInEmail.TabIndex = 1;
             this.labInEmail.Text = "Email";
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox.Image = global::RegistrationValidation.Properties.Resources.user__1_;
+            this.pictureBox.Location = new System.Drawing.Point(153, 29);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(121, 112);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
             // 
             // tabPage3
             // 
@@ -312,17 +328,6 @@
             // 
             this.errorProvider.ContainerControl = this;
             this.errorProvider.DataSource = this.usersLBindingSource;
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox.Image = global::RegistrationValidation.Properties.Resources.user__1_;
-            this.pictureBox.Location = new System.Drawing.Point(153, 29);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(121, 112);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox.TabIndex = 0;
-            this.pictureBox.TabStop = false;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -365,10 +370,10 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersLBindingSource)).EndInit();
             this.ResumeLayout(false);
 
